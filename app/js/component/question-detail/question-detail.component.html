@@ -1,5 +1,25 @@
-<hr>
-<div>
-    Title: {{questionDetailCtrl.question.title}}<br>
-    Author: {{questionDetailCtrl.question.author}}<br>
-</div>
+<md-list-item class="md-3-line" ng-click="null">
+
+    <div class="md-list-item-text" layout="column">
+        <div flex="80">
+            <h3>{{questionDetailCtrl.question.title}}</h3>
+            <h4>{{questionDetailCtrl.question.author}}</h4>
+            <p>{{questionDetailCtrl.question.answer}}</p>
+        </div>
+        <div flex="20">
+
+            //likes, comments and instituicion
+
+        </div>
+
+        <div layout="row">
+            <md-chips ng-repeat="tag in questionDetailCtrl.question.tags">
+                <md-chip><small>{{tag}}</small></md-chip>
+            </md-chips>
+        </div>
+    </div>
+
+
+
+
+</md-list-item>

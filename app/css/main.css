@@ -29,7 +29,7 @@ body {
 .card-footer {
     position: fixed;
     bottom: 0;
-    height: 10%;
+    height: 8%;
     width: 100%;
     padding: 1% 0;
     color: white;
@@ -46,4 +46,19 @@ body {
 
 .card-footer small {
     margin-bottom: 0.5%;
+}
+
+question-detail md-list-item  {
+    background-color: #FFFFFF;
+}
+
+question-detail small {
+    font-size: 10px;
+}
+
+question-detail p {
+     width: 250px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
 }
