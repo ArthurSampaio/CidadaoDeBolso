@@ -9,5 +9,10 @@
         mainCtrl.goTo = function goTo(state) {
             $state.go(state);
         };
+
+        mainCtrl.search = function search(){
+            console.log("click in search");
+        };
+
     });
 })();

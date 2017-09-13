@@ -11,3 +11,39 @@ body {
 .toolbar-class {
     background-color: #3C362A;
 }
+
+
+.content {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 2%;
+
+    width: 100%;
+    background-color: transparent;
+}
+
+.card-footer {
+    position: fixed;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    padding: 1% 0;
+    color: white;
+    background-color: #3C362A;
+}
+
+.card-footer md-icon{
+    color:white;
+}
+
+.card-footer a{
+    margin: .5%;
+}
+
+.card-footer small {
+    margin-bottom: 0.5%;
+}

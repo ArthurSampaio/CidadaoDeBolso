@@ -8,7 +8,7 @@
 
             <h2 flex md-truncate>Cidadão de Bolso</h2>
 
-            <md-button class="md-icon-button" aria-label="Favorite">
+            <md-button ng-click="mainCtrl.search()" class="md-icon-button" aria-label="Favorite">
                 <md-icon><i class="fa fa-search" aria-hidden="true"></i>
                 </md-icon>
             </md-button>
@@ -20,12 +20,18 @@
         </div>
     </md-toolbar>
 
-   
 
 
-
+    <!--Main content--> 
     <div flex ui-view="content" class="main"></div>
 
-</md-content>
 
-##### DE BOLSO #####
+    <footer class="card-footer" layout="column" layout-align="center center">
+        <a target="_blank" href="https://github.com/ArthurSampaio/CidadaoDeBolso">
+            <md-icon><i class="fa fa-github" aria-hidden="true"></i></md-icon></a>
+
+        <small>2017 - Cidadão de Bolso</small>
+    </footer>
+
+
+</md-content>
