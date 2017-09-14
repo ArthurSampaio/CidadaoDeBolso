@@ -11,7 +11,7 @@
                                 'answer': "asuhaiusdasudhasiuda sdiaus dashdasiudh asod asjdh asjdh a shdja,asuhaiusdasudhasiuda sdiaus dashdasiudh asod asjdh asjdh a shdjaasuhaiusdasudhasiuda sdiaus dashdasiudh asod asjdh asjdh a shdja",
                                 'likes': 52, 
                                 'comments': 6,
-                                'tags': ['teste', 'desenvolvimento', 'direito na palma da mão']};
+                                'tags': ['teste', 'desenvolvimento', 'direito','na palma da mão']};
         console.log(faqCtrl.questionTest);
 
     });

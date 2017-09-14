@@ -1,16 +1,13 @@
-<md-list-item class="md-3-line" ng-click="null">
+<md-list-item class="md-3-line" ng-click="null" layout="row">
+
 
     <div class="md-list-item-text" layout="column">
-        <div flex="80">
+        <div layout-align="space-around">
             <h3>{{questionDetailCtrl.question.title}}</h3>
             <h4>{{questionDetailCtrl.question.author}}</h4>
             <p>{{questionDetailCtrl.question.answer}}</p>
         </div>
-        <div flex="20">
-
-            //likes, comments and instituicion
-
-        </div>
+               
 
         <div layout="row">
             <md-chips ng-repeat="tag in questionDetailCtrl.question.tags">
@@ -18,7 +15,6 @@
             </md-chips>
         </div>
     </div>
-
 
 
 
