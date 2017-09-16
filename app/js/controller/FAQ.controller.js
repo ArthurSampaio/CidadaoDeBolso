@@ -8,10 +8,10 @@
 
         faqCtrl.questionTest = {'title': "Pergunta Sobre Algo Juridico",
                                 'author': "Zeca Urubu",
-                                'answer': "asuhaiusdasudhasiuda sdiaus dashdasiudh asod asjdh asjdh a shdja,asuhaiusdasudhasiuda sdiaus dashdasiudh asod asjdh asjdh a shdjaasuhaiusdasudhasiuda sdiaus dashdasiudh asod asjdh asjdh a shdja",
-                                'likes': 52, 
+                                'answer': "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum rhoncus dolor, in feugiat nisi ultrices sed. Vivamus eleifend nisl in feugiat lacinia. Phasellus viverra sodales posuere.",
+                                'likes': 52,
                                 'comments': 6,
-                                'tags': ['teste', 'desenvolvimento', 'direito','na palma da mão']};
+                                'tags': ['teste', 'desenvolvimento', 'direito', 'na palma da mão']};
         console.log(faqCtrl.questionTest);
 
     });
