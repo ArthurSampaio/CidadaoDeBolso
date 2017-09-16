@@ -12,7 +12,7 @@
 
     app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(false);
         $locationProvider.hashPrefix('');
 
@@ -29,7 +29,17 @@
                         controller: 'HomeController as homeCtrl'
                     }
                 }
-            });
+            })
+
+            .state("cidadao-de-bolso.busca", {
+                url: '/busca/:tag',
+                views: {
+                    content: {
+                        templateUrl: 'view/faq.html',
+                        controller: 'FAQController as faqCtrl'
+                    }
+                }
+            })
 
     });
 

@@ -1,0 +1,37 @@
+<md-list-item class="md-3-line" ng-click="questionDetailCtrl.goToQuestion()">
+
+    <div class="md-list-item-text">
+
+        <div class="md-list-item-text">
+            <h3>{{questionDetailCtrl.question.title}}</h3>
+            <h4>{{questionDetailCtrl.question.author}}</h4>
+            <p>{{questionDetailCtrl.question.answer}}</p>
+        </div>
+
+        <div class="md-secondary">
+
+            <div layout="column" class="sidebar">
+                <div layout="row">
+                    {{questionDetailCtrl.question.likes}} 
+                    <md-icon><i class="fa fa-heart-o" aria-hidden="true"></i></md-icon>
+                </div>
+                <div layout="row">{{questionDetailCtrl.question.comments}}
+                    <md-icon><i class="fa fa-comments" aria-hidden="true"></i></md-icon>
+                </div>
+            </div>
+
+        </div>
+
+        <div layout="row">
+            <md-chips ng-repeat="tag in questionDetailCtrl.question.tags">
+                <md-chip><small>{{tag}}</small></md-chip>
+            </md-chips>
+        </div>
+
+    </div>
+
+
+    <md-divider></md-divider>
+
+
+</md-list-item>
