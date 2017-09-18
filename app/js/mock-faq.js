@@ -216,6 +216,7 @@ var mock = function(){
     var legalDoubt;
     for(var i in bruto){
         legalDoubt = {
+            'id': i, 
             'title' : bruto[i].titulo,
             'author': 'Cidadania de Bolso', 
             'answer' : bruto[i].texto, 

@@ -11,6 +11,5 @@
         //its only purpose is mock the data
         faqCtrl.questions = faq;      
 
-
     });
 })();

@@ -1,38 +1,40 @@
-<div layout="column" class="wrapper">
+<section layout="column" class="wrapper">
 
-    <md-toolbar class="header">
-        <div class="md-toolbar-tools toolbar-class">
-            <md-button class="md-icon-button" aria-label="Settings">
-                <md-icon md-svg-icon="./img/icons/cdb-logo.svg"></md-icon>
-            </md-button>
+    <header>
+        <md-toolbar class="header">
+            <div class="md-toolbar-tools toolbar-class">
+                <md-button class="md-icon-button" aria-label="Settings">
+                    <md-icon md-svg-icon="./img/icons/cdb-logo.svg"></md-icon>
+                </md-button>
 
-            <h2 flex md-truncate ng-click="mainCtrl.goToMain()">Cidadão de Bolso</h2>
+                <h2 flex md-truncate ng-click="mainCtrl.goToMain()">Cidadão de Bolso</h2>
 
-            <md-button ng-click="mainCtrl.search()" class="md-icon-button" aria-label="Favorite">
-                <md-icon><i class="fa fa-search" aria-hidden="true"></i>
-                </md-icon>
-            </md-button>
+                <md-button ng-click="mainCtrl.search()" class="md-icon-button" aria-label="Favorite">
+                    <md-icon><i class="fa fa-search" aria-hidden="true"></i>
+                    </md-icon>
+                </md-button>
 
-            <md-button class="md-icon-button" aria-label="More">
-                <md-icon><i class="fa fa-plus" aria-hidden="true"></i>
-                </md-icon>
-            </md-button>
-        </div>
-    </md-toolbar>
-
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon><i class="fa fa-plus" aria-hidden="true"></i>
+                    </md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+    </header>
 
     <md-content>
         <!--Main content-->
-        <div flex ui-view="content"></div>
-
-
-        <footer class="card-footer" layout="column" layout-align="center center">
-            <a target="_blank" href="https://github.com/ArthurSampaio/CidadaoDeBolso">
-                <md-icon><i class="fa fa-github" aria-hidden="true"></i></md-icon>
-            </a>
-            <small>2017 - Cidadão de Bolso</small>
+        <main class="main">
+            <div flex ui-view="content"></div>
+            <div flex></div>
+        </main>
+        <footer>
+            <div class="card-footer" layout="column" layout-align="center center">
+                <a target="_blank" href="https://github.com/ArthurSampaio/CidadaoDeBolso">
+                    <md-icon><i class="fa fa-github" aria-hidden="true"></i></md-icon>
+                </a>
+                <small>2017 - Cidadão de Bolso</small>
+            </div>
         </footer>
-
-
     </md-content>
-</div>
+</section>

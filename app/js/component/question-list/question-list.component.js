@@ -3,7 +3,7 @@
     var app = angular.module('cdbApp');
 
 
-    function QuestionListController() {
+    function QuestionListController($timeout) {
         var questionListCtrl = this;
 
 
@@ -11,6 +11,14 @@
             //$state.go(STATE_LEI, {id: question.id });
             console.log(question);
         };
+
+        questionListCtrl.$onInit = () => {
+            questionListCtrl.processing = true; 
+            $timeout(()=>{
+                questionListCtrl.processing = false;
+            }, 2000);
+        };
+
 
     }
 
