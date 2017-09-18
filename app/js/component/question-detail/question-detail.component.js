@@ -5,13 +5,12 @@
 
     function QuestionDetailController() {
         var questionDetailCtrl = this;
-        console.log(questionDetailCtrl.question)
         const STATE_LEI = "lei";
 
-        questionDetailCtrl.goToQuestion = () => {
-            //$state.go(STATE_LEI, {id: question.id });
-            console.log(questionDetailCtrl.question);
+        questionDetailCtrl.goToQuestion = (question) => {
+           questionDetailCtrl.toQuestion(questionDetailCtrl.question);
         };
+
 
     }
 
@@ -22,7 +21,8 @@
         controller: QuestionDetailController,
         controllerAs: 'questionDetailCtrl',
         bindings: {
-            question: '<'
+            question: '<',
+            toQuestion: '&'
         }
     });
 

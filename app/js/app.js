@@ -38,6 +38,11 @@
                         templateUrl: 'view/faq.html',
                         controller: 'FAQController as faqCtrl'
                     }
+                },
+                resolve: {
+                    tag: ($stateParams) => {
+                        return $stateParams.tag;    
+                    }
                 }
             })
 

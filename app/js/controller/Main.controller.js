@@ -14,5 +14,9 @@
             console.log("click in search");
         };
 
+        mainCtrl.goToMain = () => {
+            $state.go("cidadao-de-bolso.home");
+        };
+
     });
 })();

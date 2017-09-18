@@ -1,0 +1,6 @@
+<md-subheader>Pesquisa por {{questionListCtrl.tag}} </md-subheader>
+<question-detail ng-repeat="question in questionListCtrl.questions" 
+                    question="question" 
+                    to-question="questionListCtrl.goToQuestion(question)"
+                    >
+                    </question-detail>

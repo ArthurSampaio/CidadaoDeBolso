@@ -71,10 +71,9 @@ question-detail .sidebar {
     margin-top: 1%;
     margin-right: 5%;
 
-    
-
 }
 
 question-detail .sidebar md-icon {
     display: block;
+    padding: 2px;
 }
