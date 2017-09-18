@@ -12,7 +12,7 @@
 
     app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/home');
         $locationProvider.html5Mode(false);
         $locationProvider.hashPrefix('');
 
