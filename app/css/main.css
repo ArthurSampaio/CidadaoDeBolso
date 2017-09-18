@@ -25,13 +25,25 @@ body {
 }
 
 .card-footer {
-    position: fixed;
     bottom: 0;
     height: 8%;
     width: 100%;
     padding: 1% 0;
     color: white;
     background-color: #3C362A;
+}
+
+
+.wrapper{
+  display: flex;
+  flex-direction: column;            
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+    top:0; 
+    flex: 0 0 auto; 
 }
 
 .card-footer md-icon{

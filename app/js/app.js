@@ -18,8 +18,13 @@
 
         $stateProvider
             .state("cidadao-de-bolso", {
-                templateUrl: "view/main.html",
-                controller: 'MainController as mainCtrl'
+                views: {
+                    main: {
+                        templateUrl: "view/main.html",
+                        controller: 'MainController as mainCtrl'
+                    }
+                }
+
             })
             .state("cidadao-de-bolso.home", {
                 url: '/home',
@@ -41,7 +46,7 @@
                 },
                 resolve: {
                     tag: ($stateParams) => {
-                        return $stateParams.tag;    
+                        return $stateParams.tag;
                     }
                 }
             })

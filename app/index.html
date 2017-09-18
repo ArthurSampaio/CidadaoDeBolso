@@ -24,11 +24,11 @@
 
 </head>
 
-<body ng-app="cdbApp" ng-cloak>
+<body ng-app="cdbApp" ng-cloak layout-fill>
 
-    <md-content>
-        <section ui-view></section>
-    </md-content>
+
+    <section ui-view="main"></section>
+
 
 
     <!--Assets-->
@@ -42,7 +42,7 @@
     <script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 
-    <!--data mock--> 
+    <!--data mock-->
     <script src="./js/mock-faq.js"></script>
 
     <!--Config / Root -->
