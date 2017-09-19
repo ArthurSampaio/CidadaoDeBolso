@@ -222,11 +222,13 @@ var mock = function(){
             'answer' : bruto[i].texto, 
             'likes': 0, 
             'comments': 0, 
-            'tags': bruto[i].tags
+            'tags': bruto[i].tags.map((tag) => {
+              return tag.toLowerCase().trim();
+            })
         }
         mock.push(legalDoubt);
     }
-    return mock; 
+    return mock;
 }
 
-var faq = mock(); 
+var faq = mock();

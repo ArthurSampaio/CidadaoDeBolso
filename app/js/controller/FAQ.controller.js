@@ -2,14 +2,20 @@
 (function () {
     var app = angular.module('cdbApp');
 
-    app.controller("FAQController", function FAQController($state, tag) {
+    app.controller("FAQController", function FAQController($state, tag, SearchService) {
 
         var faqCtrl = this;
         faqCtrl.tag = tag; 
+       
+        
+        SearchService._filterByUniqueTag(faqCtrl.tag).then(
+            function success(response){
+                faqCtrl.questions =  response; 
+            }, function error (response){
+                faqCtrl.questions =  response;
+            }
 
-        //faq is defined in js/mock-faq.js 
-        //its only purpose is mock the data
-        faqCtrl.questions = faq;      
+        );      
 
     });
 })();

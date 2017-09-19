@@ -55,6 +55,7 @@
 
     app.run(['$rootScope', '$state', function ($rootScope, $state) {
 
+
         $state.defaultErrorHandler(function (error) {
             console.log(error);
         });
