@@ -52,9 +52,14 @@ header {
     flex: 0 0 auto; 
 }
 
+footer {
+    bottom: 0;
+}
+
 
 .card-footer md-icon{
     color:white;
+    bottom: 0;
 }
 
 .card-footer a{
@@ -102,12 +107,10 @@ like-question .like-box{
     left: 0; 
     height: 10%;
     max-height: 20%;
-
 }
 
 like-question .like-box .title{
     padding-left: 1%;
-
 }
 
 like-question md-chip {
@@ -115,5 +118,15 @@ like-question md-chip {
     font-size: 14px;
     background-color: #895737; 
     color: white;
+}
 
+text-reader .page {
+  margin: 0 auto;
+  padding: 24px;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.25); 
+}
+
+text-reader .page p {
+  line-height: 1.6rem; 
+  text-align: justify;
 }

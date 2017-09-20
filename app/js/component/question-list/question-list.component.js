@@ -3,12 +3,12 @@
     var app = angular.module('cdbApp');
 
 
-    function QuestionListController($timeout) {
+    function QuestionListController($timeout, $state) {
         var questionListCtrl = this;
-
+        const STATE_QUESTAO = "cidadao-de-bolso.questao-detalhada";
 
         questionListCtrl.goToQuestion = (question) => {
-            //$state.go(STATE_LEI, {id: question.id });
+            $state.go(STATE_QUESTAO, {id: question.id });
             console.log(question);
         };
 
@@ -16,7 +16,7 @@
             questionListCtrl.processing = true; 
             $timeout(()=>{
                 questionListCtrl.processing = false;
-            }, 2000);
+            }, 200);
         };
 
 
