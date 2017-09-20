@@ -15,7 +15,8 @@
                 faqCtrl.questions =  response;
             }
 
-        );      
+        );
+
 
     });
 })();

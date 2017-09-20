@@ -51,6 +51,27 @@
                 }
             })
 
+            .state("cidadao-de-bolso.questao-detalhada", {
+                url: '/questao/:id',
+                views: {
+                    content: {
+                        templateUrl: 'view/questao.html', 
+                        controller: 'QuestionController as questionCtrl'
+                    }
+                }, 
+                resolve: {
+                    questao: (($stateParams, SearchService) => {
+                        return SearchService.getById($stateParams.id).then(
+                            function success(response){
+                                return response; 
+                            }
+                        )
+                    })
+                }
+            });
+
+
+
     });
 
     app.run(['$rootScope', '$state', function ($rootScope, $state) {

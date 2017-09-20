@@ -8,7 +8,7 @@
 
         //faq is defined in js/mock-faq.js 
         //its only purpose is mock the data
-        service.questions = faq;
+        service.questions = angular.copy(faq);
 
         service.filterByTags = (tags) => {
             var deffered = $q.defer()
@@ -27,27 +27,40 @@
             } finally {
                 return deffered;
             }
-
-
         };
 
         service._filterByUniqueTag = (unique) => {
-            var copyQuestions = angular.copy(faq);
+            var copyQuestions = service.questions;
             var deffered = $q.defer();
 
             var filtered = copyQuestions.filter((question) => {
                 return _containsTag(question.tags, unique)
             })
 
-            if(filtered.length > 0){
+            if (filtered.length > 0) {
                 deffered.resolve(filtered);
-            }else {
+            } else {
                 deffered.reject(filtered);
             }
 
             return deffered.promise;
         };
 
+        service.getById = (id) => {
+            var deffered = $q.defer();
+            var questionFinded = service.questions.filter((element) => {
+                return element.id === id; 
+            });
+
+            if (questionFinded !== undefined) {
+                deffered.resolve(questionFinded[0]);
+            } else {
+                deffered.reject(questionFinded[0]);
+            }
+
+            return deffered.promise; 
+
+        };
 
 
         var _containsTag = (tags, unique) => {

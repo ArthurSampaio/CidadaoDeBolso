@@ -1,0 +1,24 @@
+<div class="like-box md-4-line" layout="row">
+
+    <div flex="20" layout="column" layout-align="center center">
+        <h2>{{likeQuestionCtrl.question.likes}}</h2>
+        <md-button ng-click="likeQuestionCtrl.changeStatusLike()" title="Curtir questão" class="md-icon-button md-accent">
+            <md-icon md-svg-icon="{{likeQuestionCtrl.getStatusLike()}}"></md-icon>
+        </md-button>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div class="title" flex="80" layout-align="start space-around">
+        <h2>{{likeQuestionCtrl.question.title}}</h2>
+        <div layout="row">
+            <md-chips ng-repeat="tag in likeQuestionCtrl.question.tags">
+                <md-chip><small>{{tag}}</small></md-chip>
+            </md-chips>
+        </div>
+
+    </div>
+
+
+</div>
+    <md-divider></md-divider>

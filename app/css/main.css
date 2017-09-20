@@ -5,7 +5,7 @@ html,
 body {
     background-color: #FFFCF7;
     min-height: 100%;
-    font-family: 'Ruda', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .toolbar-class {
@@ -95,4 +95,25 @@ question-detail .sidebar {
 question-detail .sidebar md-icon {
     display: block;
     padding: 2px;
+}
+
+like-question .like-box{
+    top: 0;
+    left: 0; 
+    height: 10%;
+    max-height: 20%;
+
+}
+
+like-question .like-box .title{
+    padding-left: 1%;
+
+}
+
+like-question md-chip {
+    height: 5px;
+    font-size: 14px;
+    background-color: #895737; 
+    color: white;
+
 }
