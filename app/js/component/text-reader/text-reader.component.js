@@ -5,9 +5,6 @@
 
     function TextReaderController() {
         var textReaderCtrl = this;
-        
-
-
     }
 
 
@@ -17,7 +14,7 @@
         controller: TextReaderController,
         controllerAs: 'textReaderCtrl',
         bindings: {
-            question: '<',
+            text: '<',
         }
     });
 

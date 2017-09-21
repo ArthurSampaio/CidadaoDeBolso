@@ -11,10 +11,7 @@
            questionDetailCtrl.toQuestion(questionDetailCtrl.question);
         };
 
-
     }
-
-
 
     app.component('questionDetail', {
         templateUrl: 'js/component/question-detail/question-detail.component.html',

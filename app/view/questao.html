@@ -1,4 +1,15 @@
 <like-question question="questionCtrl.question" 
                 change-status="questionCtrl.changeStatusLike()"
                 get-status="questionCtrl.getStatus()"></like-question>
-<text-reader question="questionCtrl.question"></text-reader>
+
+<text-reader text="questionCtrl.question.doubt"></text-reader>
+<user-gravatar author="questionCtrl.question.author" ></user-gravatar>
+<md-divider> </md-divider>
+
+<h2>Resposta</h2>
+<text-reader text="questionCtrl.question.answer.text" ></text-reader>
+<user-gravatar author="questionCtrl.question.answer.author" ></user-gravatar>
+<md-divider></md-divider>
+
+<h2>Comentários</h2>
+

@@ -13,6 +13,7 @@
         likeQuestionCtrl.changeStatusLike = () => {
             return likeQuestionCtrl.changeStatus({}); 
         }
+        
     }
 
 

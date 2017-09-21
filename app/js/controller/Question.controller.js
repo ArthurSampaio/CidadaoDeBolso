@@ -11,6 +11,7 @@
         questionCtrl.isLikedQuestion = false; 
 
         questionCtrl.getStatus = () => {
+            
             if (questionCtrl.isLikedQuestion) {
                 return LIKE;
             } else {
@@ -19,7 +20,6 @@
         };
 
         questionCtrl.changeStatusLike = () => {
-            console.log('entrou')
             if (questionCtrl.isLikedQuestion) {
                 questionCtrl.question.likes--;
                 questionCtrl.isLikedQuestion = !questionCtrl.isLikedQuestion;
