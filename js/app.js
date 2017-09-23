@@ -10,6 +10,17 @@
         'ui.router'
     ]);
 
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBihGiKreVxAH5l7L37o_v-q9EL2M33FCg",
+        authDomain: "cidadaodebolso.firebaseapp.com",
+        databaseURL: "https://cidadaodebolso.firebaseio.com",
+        projectId: "cidadaodebolso",
+        storageBucket: "cidadaodebolso.appspot.com",
+        messagingSenderId: "693381219950"
+    };
+    firebase.initializeApp(config);
+
     app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/home');
@@ -55,15 +66,15 @@
                 url: '/questao/:id',
                 views: {
                     content: {
-                        templateUrl: 'view/questao.html', 
+                        templateUrl: 'view/questao.html',
                         controller: 'QuestionController as questionCtrl'
                     }
-                }, 
+                },
                 resolve: {
                     questao: (($stateParams, SearchService) => {
                         return SearchService.getById($stateParams.id).then(
-                            function success(response){
-                                return response; 
+                            function success(response) {
+                                return response;
                             }
                         )
                     })

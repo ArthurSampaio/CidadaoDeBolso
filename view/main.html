@@ -14,10 +14,11 @@
                     </md-icon>
                 </md-button>
               
-                <md-button class="md-icon-button" aria-label="Plus">
-                    <md-icon><i class="fa fa-plus" aria-hidden="true"></i>
-                    </md-icon>
-                </md-button>
+                
+                <cb-auth user="mainCtrl.user" 
+                        sign-in="mainCtrl.login()" 
+                        sign-out="mainCtrl.logout()"></cb-auth>
+                
             </div>
         </md-toolbar>
     </header>
