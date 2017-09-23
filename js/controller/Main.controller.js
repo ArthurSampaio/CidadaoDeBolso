@@ -6,6 +6,7 @@
 
         var mainCtrl = this;
 
+
         mainCtrl.search = function search() {
             console.log("click in search");
             console.log(mainCtrl.user)
@@ -24,8 +25,20 @@
                 function error(response) {
                     console.log(response);
                 }
+            );
+        };
+
+        mainCtrl.logout = () => {
+            return AuthService.signOut().then(
+                function success(response){
+                    console.log(response);
+                }, function error(response){
+                    console.log(response)
+                }
             )
         };
+
+
 
 
     });

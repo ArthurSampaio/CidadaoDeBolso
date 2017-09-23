@@ -15,9 +15,8 @@
             var provider = new firebase.auth.GoogleAuthProvider(); 
             service.auth.signInWithPopup(provider).then(
                 function success(response){
-                    console.log(response);
-                    service.user = response.user; 
-                    deffered.resolve(response.user);
+                    service.user = new User(response.user.displayName, response.user.photoURL); 
+                    deffered.resolve(service.user);
                 }, function(erro) {
                     deffered.reject(erro);
                 }
@@ -26,7 +25,24 @@
         };
 
         service.signOut = () => {
-            service.auth.signOut(); 
+            var deffered = $q.defer();
+            service.auth.signOut().then(
+                function success(response){
+                    console.log(response);
+                    deffered.resolve(response);
+                }, function error(response){
+                    deffered.reject(response);
+                }
+            );
+            return deffered.promise;
+        };
+
+        service.isLogged = () => {
+            var result = false; 
+            if (service.auth.currentUser){
+                return true;
+            }
+            return result;
         };
 
 

@@ -15,9 +15,10 @@
                 </md-button>
               
                 
-                <md-button ng-click="mainCtrl.login()" aria-label="Plus">
-                    SignIn
-                </md-button>
+                <cb-auth user="mainCtrl.user" 
+                        sign-in="mainCtrl.login()" 
+                        sign-out="mainCtrl.logout()"></cb-auth>
+                
             </div>
         </md-toolbar>
     </header>
