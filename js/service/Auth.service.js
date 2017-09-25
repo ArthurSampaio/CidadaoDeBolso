@@ -17,7 +17,7 @@
                 function success(response){
                     service.user = new User(response.user.displayName, response.user.photoURL); 
                     deffered.resolve(service.user);
-                }, function(erro) {
+                }, function error(erro) {
                     deffered.reject(erro);
                 }
             );

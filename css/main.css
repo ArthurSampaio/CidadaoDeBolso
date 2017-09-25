@@ -131,3 +131,6 @@ text-reader .page p {
   text-align: justify;
 }
 
+cb-auth md-menu {
+    max-width: 3%; 
+}

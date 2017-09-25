@@ -31,9 +31,10 @@
         mainCtrl.logout = () => {
             return AuthService.signOut().then(
                 function success(response){
-                    console.log(response);
+                    mainCtrl.user = response;
+                    //todo, toast dizendo q saiu. 
                 }, function error(response){
-                    console.log(response)
+                    //todo
                 }
             )
         };

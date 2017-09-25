@@ -12,13 +12,7 @@
         };
 
         authCtrl.login = () => {
-            authCtrl.signIn({}).then(
-                function success(data) {
-                    console.log(data);
-                }, function error(data) {
-                    console.log(data)
-                }
-            )
+            authCtrl.signIn({});
         };
 
         authCtrl.logout = () => {
@@ -29,14 +23,11 @@
    
         authCtrl.$onChanges = (obj) => {
             if (obj.user) {
-                console.log("alterou")
-                console.log(obj.user)
                 if (obj.user.currentValue !== undefined) {
-                    
                     authCtrl.user = obj.user.currentValue;
-                    console.log(authCtrl.user)
                     authCtrl.logado = true;
                 } else {
+                    authCtrl.user = obj.user.currentValue;
                     authCtrl.logado = false;
                 }
             }

@@ -1,15 +1,13 @@
-<md-list class="md-dense" flex>
+<div class="md-dense" flex>
 
     <div ng-if="authCtrl.user === undefined">
         <md-button ng-click="authCtrl.login()" title="Realize o login" class="md-icon-button">
             <md-icon md-svg-icon="./img/icons/user.svg"></md-icon>
         </md-button>
     </div>
-
     <md-list-item ng-if="authCtrl.user !== undefined">
-        <!--<img ng-src="{{authCtrl.user.pictureUrl}}" class="md-avatar" ng-click="authCtrl.userOption($event)" >-->
         <md-menu>
-            <img ng-src="{{authCtrl.user.pictureUrl}}" class="md-avatar" ng-click="$mdMenu.open()" >
+            <img  ng-click="$mdMenu.open()" ng-src="{{authCtrl.user.pictureUrl}}" class="md-avatar">
             <md-menu-content width="3" ng-mouseleave="$mdMenu.close()">
                 <md-menu-item>
                     <md-button ng-click="authCtrl.logout()">
@@ -19,7 +17,4 @@
             </md-menu-content>
         </md-menu>
     </md-list-item>
-
-
-
-</md-list>
+</div>
