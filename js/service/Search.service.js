@@ -32,8 +32,8 @@
         service._filterByUniqueTag = (unique) => {
 
             var deffered = $q.defer();
-            PostService.loadQuestions().then(function success(questionsTree) {
-                var filtered = questionsTree.filter((question) => {
+            PostService.loadQuestions().then(function success(questionsJson) {
+                var filtered = questionsJson.filter((question) => {
                     return _containsTag(question.tags, unique);
                 });
                 if (filtered.length > 0) {
@@ -47,15 +47,19 @@
 
         service.getById = (id) => {
             var deffered = $q.defer();
-            var questionFinded = service.questions.filter((element) => {
-                return element.id === id;
-            });
 
-            if (questionFinded !== undefined) {
-                deffered.resolve(questionFinded[0]);
-            } else {
-                deffered.reject(questionFinded[0]);
-            }
+            PostService.loadQuestions().then(function success(questionJson) {
+                var questionFinded = questionJson.filter((element) => {
+                    return element.id === id;
+                });
+
+                if (questionFinded !== undefined) {
+                    deffered.resolve(questionFinded[0]);
+                } else {
+                    deffered.reject(questionFinded[0]);
+                }
+
+            });
 
             return deffered.promise;
 
