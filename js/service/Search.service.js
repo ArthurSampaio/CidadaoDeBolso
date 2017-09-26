@@ -2,13 +2,21 @@
 (() => {
     var app = angular.module('cdbApp');
 
-    app.service('SearchService', function ($q) {
+    app.service('SearchService', function ($q, PostService) {
 
         var service = this;
 
         //faq is defined in js/mock-faq.js 
         //its only purpose is mock the data
-        service.questions = angular.copy(faq);
+        service.questions = [];//angular.copy(faq);
+
+        PostService.loadQuestions().then(
+            function success(snapshot) {
+                console.log(snapshot);
+                service.questions = snapshot;
+            }, function error(response) {
+                console.log(service);
+            });
 
         service.filterByTags = (tags) => {
             var deffered = $q.defer()
@@ -49,7 +57,7 @@
         service.getById = (id) => {
             var deffered = $q.defer();
             var questionFinded = service.questions.filter((element) => {
-                return element.id === id; 
+                return element.id === id;
             });
 
             if (questionFinded !== undefined) {
@@ -58,7 +66,7 @@
                 deffered.reject(questionFinded[0]);
             }
 
-            return deffered.promise; 
+            return deffered.promise;
 
         };
 
