@@ -244,3 +244,31 @@ var mock = function () {
 }
 
 var faq = mock();
+
+var limpos = {};
+
+JSON.str
+
+for (var i in bruto) {
+  limpos[i] = {
+    'title': bruto[i].titulo,
+    'author': {
+      'name': 'Cidadania de Bolso',
+      'photo': './img/user_default.png'
+    },
+    'answer': {
+      'text': bruto[i].texto,
+      'author': {
+        'name': 'Cidadania de Bolso',
+        'photo': './img/user_default.png'
+      }
+    },
+    'likes': 0,
+    'comments': 0,
+    'tags': bruto[i].tags.map((tag) => {
+      return tag.toLowerCase().trim();
+    }),
+    'doubt': doubt_default
+  }
+
+}

@@ -17,10 +17,8 @@
 
         authCtrl.logout = () => {
             authCtrl.signOut({});
-
         };
 
-   
         authCtrl.$onChanges = (obj) => {
             if (obj.user) {
                 if (obj.user.currentValue !== undefined) {
