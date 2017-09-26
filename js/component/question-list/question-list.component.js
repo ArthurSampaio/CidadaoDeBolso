@@ -8,6 +8,7 @@
         const STATE_QUESTAO = "cidadao-de-bolso.questao-detalhada";
 
         questionListCtrl.goToQuestion = (question) => {
+            
             $state.go(STATE_QUESTAO, {id: question.id });
             console.log(question);
         };
