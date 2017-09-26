@@ -6,10 +6,6 @@
 
         var service = this;
 
-        //faq is defined in js/mock-faq.js 
-        //its only purpose is mock the data
-        //angular.copy(faq);7
-
         service.filterByTags = (tags) => {
             var deffered = $q.defer()
 
@@ -43,6 +39,7 @@
                 }
             });
             return deffered.promise;
+
         };
 
         service.getById = (id) => {

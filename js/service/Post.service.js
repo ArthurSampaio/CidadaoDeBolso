@@ -5,7 +5,7 @@
     app.service('PostService', function ($q, QuestionFactory) {
 
         var service = this;
-        service.database = firebase.database(); 
+        service.database = firebase.database();
 
         service.loadQuestions = () => {
             service.questionsRef = service.database.ref('questions');
@@ -20,7 +20,7 @@
             );
             return deffered.promise;
         };
-        
+
 
     });
 })();
