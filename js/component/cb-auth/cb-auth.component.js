@@ -8,7 +8,7 @@
 
 
         authCtrl.$onInit = () => {
-            console.log(authCtrl.logado);
+           // console.log(authCtrl.logado);
         };
 
         authCtrl.login = () => {

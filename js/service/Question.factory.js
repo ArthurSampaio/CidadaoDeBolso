@@ -2,19 +2,17 @@
 (() => {
     var app = angular.module('cdbApp');
 
-    app.factory('QuestionFactory', function ($q) {
+    app.factory('QuestionFactory', function ($q, HelperService) {
 
-        var factory = this;
-        
-        factory.createArrayOfQuestion = (questionsJSON) => {
-            var outQuestions = [];
-            for(i in questionsJSON){
-                var helpQuestion = questionsJSON[i];
-                hepQuestion.id = i; 
-                
-            }
 
+        function _createArrayOfQuestion(questionsJSON) {
+            var outQuestions = HelperService.questionTreeJsonToQuestionArrayJson(questionsJSON);
+            return outQuestions;
         };
+
+        return {
+            createArrayOfQuestion: _createArrayOfQuestion
+        }
 
     });
 })();

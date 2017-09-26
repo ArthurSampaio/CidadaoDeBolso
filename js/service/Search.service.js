@@ -2,21 +2,13 @@
 (() => {
     var app = angular.module('cdbApp');
 
-    app.service('SearchService', function ($q, PostService) {
+    app.service('SearchService', function ($q, PostService, QuestionFactory) {
 
         var service = this;
 
         //faq is defined in js/mock-faq.js 
         //its only purpose is mock the data
-        service.questions = [];//angular.copy(faq);
-
-        PostService.loadQuestions().then(
-            function success(snapshot) {
-                console.log(snapshot);
-                service.questions = snapshot;
-            }, function error(response) {
-                console.log(service);
-            });
+        //angular.copy(faq);7
 
         service.filterByTags = (tags) => {
             var deffered = $q.defer()
@@ -38,19 +30,18 @@
         };
 
         service._filterByUniqueTag = (unique) => {
-            var copyQuestions = service.questions;
+
             var deffered = $q.defer();
-
-            var filtered = copyQuestions.filter((question) => {
-                return _containsTag(question.tags, unique)
-            })
-
-            if (filtered.length > 0) {
-                deffered.resolve(filtered);
-            } else {
-                deffered.reject(filtered);
-            }
-
+            PostService.loadQuestions().then(function success(questionsTree) {
+                var filtered = questionsTree.filter((question) => {
+                    return _containsTag(question.tags, unique);
+                });
+                if (filtered.length > 0) {
+                    deffered.resolve(filtered);
+                } else {
+                    deffered.reject(filtered);
+                }
+            });
             return deffered.promise;
         };
 
