@@ -8,7 +8,7 @@
 
 
         authCtrl.$onInit = () => {
-            console.log(authCtrl.logado);
+           // console.log(authCtrl.logado);
         };
 
         authCtrl.login = () => {
@@ -17,10 +17,8 @@
 
         authCtrl.logout = () => {
             authCtrl.signOut({});
-
         };
 
-   
         authCtrl.$onChanges = (obj) => {
             if (obj.user) {
                 if (obj.user.currentValue !== undefined) {

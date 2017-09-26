@@ -2,13 +2,9 @@
 (() => {
     var app = angular.module('cdbApp');
 
-    app.service('SearchService', function ($q) {
+    app.service('SearchService', function ($q, PostService, QuestionFactory) {
 
         var service = this;
-
-        //faq is defined in js/mock-faq.js 
-        //its only purpose is mock the data
-        service.questions = angular.copy(faq);
 
         service.filterByTags = (tags) => {
             var deffered = $q.defer()
@@ -30,35 +26,39 @@
         };
 
         service._filterByUniqueTag = (unique) => {
-            var copyQuestions = service.questions;
+
             var deffered = $q.defer();
-
-            var filtered = copyQuestions.filter((question) => {
-                return _containsTag(question.tags, unique)
-            })
-
-            if (filtered.length > 0) {
-                deffered.resolve(filtered);
-            } else {
-                deffered.reject(filtered);
-            }
-
+            PostService.loadQuestions().then(function success(questionsJson) {
+                var filtered = questionsJson.filter((question) => {
+                    return _containsTag(question.tags, unique);
+                });
+                if (filtered.length > 0) {
+                    deffered.resolve(filtered);
+                } else {
+                    deffered.reject(filtered);
+                }
+            });
             return deffered.promise;
+
         };
 
         service.getById = (id) => {
             var deffered = $q.defer();
-            var questionFinded = service.questions.filter((element) => {
-                return element.id === id; 
+
+            PostService.loadQuestions().then(function success(questionJson) {
+                var questionFinded = questionJson.filter((element) => {
+                    return element.id === id;
+                });
+
+                if (questionFinded !== undefined) {
+                    deffered.resolve(questionFinded[0]);
+                } else {
+                    deffered.reject(questionFinded[0]);
+                }
+
             });
 
-            if (questionFinded !== undefined) {
-                deffered.resolve(questionFinded[0]);
-            } else {
-                deffered.reject(questionFinded[0]);
-            }
-
-            return deffered.promise; 
+            return deffered.promise;
 
         };
 
