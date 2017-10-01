@@ -15,7 +15,7 @@
                 questionArray.push(question);
             }
             return questionArray;
-        }
+        };
 
 
     });
