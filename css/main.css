@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
 
 html,
 body {
@@ -9,7 +11,8 @@ body {
 }
 
 .toolbar-class {
-    background-color: #3C362A;
+    background-color: #FFFFFF;
+    color: black
 }
 
 
@@ -29,8 +32,7 @@ body {
     height: 8%;
     width: 100%;
     padding: 1% 0;
-    color: white;
-    background-color: #3C362A;
+
 }
 
 
@@ -46,21 +48,28 @@ body {
     min-height: 600px;
 }
 
+.title {
+    text-align: center;
+}
+
 
 header {
     top:0; 
     flex: 0 0 auto; 
+    font-family: 'Oswald', 'sans-serif';
+}
+
+header h2 {
+    font-size: 1000px;
 }
 
 footer {
     bottom: 0;
+    font-family: 'Oswald', 'sans-serif';
+    color: black;
+    background-color: #FFFFFF;
 }
 
-
-.card-footer md-icon{
-    color:white;
-    bottom: 0;
-}
 
 .card-footer a{
     margin: .5%;

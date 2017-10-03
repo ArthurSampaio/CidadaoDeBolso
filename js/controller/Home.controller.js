@@ -20,7 +20,6 @@
                     .font({
                         "family": "HelveticaNeue",
                         "transform": "uppercase"
-
                     })
                     .mouse({
                         "move": false,
