@@ -9,12 +9,11 @@
                 </md-button>
 
                 <div class="title" flex>
-                     <h1  ng-click="mainCtrl.goToMain()">Cidadão de Bolso</h1>
+                     <big ng-click="mainCtrl.goToMain()">Cidadão de Bolso</big>
                 </div>
                
                 <md-button ng-click="mainCtrl.search()" class="md-icon-button" aria-label="Search">
-                    <md-icon><i class="fa fa-search" aria-hidden="true"></i>
-                    </md-icon>
+                    <md-icon md-svg-icon="./img/icons/search.svg"></md-icon>
                 </md-button>              
                 
                 <cb-auth user="mainCtrl.user" 

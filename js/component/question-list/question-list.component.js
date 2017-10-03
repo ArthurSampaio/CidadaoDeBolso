@@ -10,7 +10,7 @@
         questionListCtrl.goToQuestion = (question) => {
             
             $state.go(STATE_QUESTAO, {id: question.id });
-            console.log(question);
+           // console.log(question);
         };
 
         questionListCtrl.$onInit = () => {

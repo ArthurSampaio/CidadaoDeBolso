@@ -9,16 +9,13 @@
 
     <md-divider></md-divider>
 
-    <div class="title" flex="80" layout-align="start space-around">
+    <div class="title" flex="80" layout-align="start">
         <h2>{{likeQuestionCtrl.question.title}}</h2>
         <div layout="row">
             <md-chips ng-repeat="tag in likeQuestionCtrl.question.tags">
                 <md-chip><small>{{tag}}</small></md-chip>
             </md-chips>
         </div>
-
     </div>
-
-
 </div>
 <md-divider></md-divider>
