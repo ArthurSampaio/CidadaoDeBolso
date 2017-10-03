@@ -45,18 +45,13 @@
         service.getById = (id) => {
             var deffered = $q.defer();
 
-            PostService.loadQuestions().then(function success(questionJson) {
-                var questionFinded = questionJson.filter((element) => {
-                    return element.id === id;
-                });
-
-                if (questionFinded !== undefined) {
-                    deffered.resolve(questionFinded[0]);
-                } else {
-                    deffered.reject(questionFinded[0]);
+            PostService.getQuestionById(id).then(
+                function success(snapshot) {
+                    deffered.resolve(snapshot);
+                }, function error(exception) {
+                    deffered.reject(exception);
                 }
-
-            });
+            );
 
             return deffered.promise;
 
