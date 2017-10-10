@@ -6,8 +6,7 @@
 
         var faqCtrl = this;
         faqCtrl.tag = tag; 
-       
-        
+
         SearchService._filterByUniqueTag(faqCtrl.tag).then(
             function success(response){
                 faqCtrl.questions =  response; 

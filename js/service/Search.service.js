@@ -64,8 +64,7 @@
                 if (tag.indexOf(unique) !== -1) out = true;
             })
             return out;
-        }
-
+        };
 
     });
 })();
